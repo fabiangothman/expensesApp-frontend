@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import './Footer.css';
-import { AppBar, Box, Container, Typography } from '@mui/material';
+import { AppBar, Container, Typography } from '@mui/material';
 
 const Footer = () => {
-  const [count, setCount] = useState(0);
 
   return (
     <AppBar component="footer" color="primary" position="static">
