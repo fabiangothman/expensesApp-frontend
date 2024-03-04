@@ -23,7 +23,7 @@ const Layout = () => {
             overflowY: "auto"
           }}
         >
-          <Container maxWidth="lg">
+          <Container maxWidth="lg" style={{ height: '100%' }}>
             <Outlet />
           </Container >
         </Box>

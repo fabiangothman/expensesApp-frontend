@@ -8,7 +8,6 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
@@ -24,8 +23,11 @@ const settings: { label: string, link: string }[] = [
   { label: 'Profile', link: '/profile' },
   { label: 'Account', link: '/account' },
   { label: 'Dashboard', link: '/dashboard' },
+  { label: 'Register', link: '/register' },
+  { label: 'Login', link: '/login' },
   { label: 'Logout', link: '/logout' }
 ];
+const appName = import.meta.env.VITE_APP_NAME;
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -66,7 +68,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            ExpensesApp
+            { appName }
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -122,7 +124,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            ExpensesApp
+            { appName }
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
