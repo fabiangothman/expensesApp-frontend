@@ -1,30 +1,33 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// Import styles
-import './App.css';
-import Home from './pages/home/Home';
-import NotFound from './pages/notFound/NotFound';
-import DashboardHome from './pages/dashboard/home/DashboardHome';
-import Login from './pages/login/Login';
-import Layout from './components/layout/Layout';
+// Components
 import SiteSchema from "./pages/site/layouts/schema/SiteSchema";
+import Homepage from "./pages/site/home/Homepage";
+import About from "./pages/site/about/About";
+import SignUp from "./pages/site/auth/signup/SignUp";
+import SignIn from "./pages/site/auth/signin/SignIn";
+import SiteNotFound from "./pages/site/notfound/SiteNotFound";
+import AppSchema from "./pages/app/layouts/schema/AppSchema";
+import Dashboard from "./pages/app/dashboard/Dashboard";
+import Logout from "./pages/app/auth/logout/Logout";
+import AppNotFound from "./pages/app/notfound/SiteNotFound";
+// Styles
+import './App.css';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/dashboard' element={<DashboardHome />} />
-          <Route path='*' element={<NotFound />} />
+        <Route path="" element={<SiteSchema />}>
+          <Route index element={<Homepage />} />
+          <Route path="about" element={<About />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="*" element={<SiteNotFound />} />
         </Route>
-        <Route path="/app" element={<SiteSchema />}>
-          <Route index element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/dashboard' element={<DashboardHome />} />
-          <Route path='*' element={<NotFound />} />
+        <Route path="app" element={<AppSchema />}>
+          <Route index element={<Dashboard />} />
+          <Route path="logout" element={<Logout />} />
+          <Route path="*" element={<AppNotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

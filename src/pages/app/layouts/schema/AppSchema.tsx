@@ -1,16 +1,15 @@
 import { Outlet } from "react-router-dom";
 // Styles
-import './SiteSchema.css';
+import './AppSchema.css';
 
-const SiteSchema = () => {
-  
+const AppSchema = () => {
 
   return (
     <div className="">
-      <p>SiteSchema</p>
+      <p>AppSchema</p>
       <Outlet />
     </div>
   )
 }
 
-export default SiteSchema;
+export default AppSchema;

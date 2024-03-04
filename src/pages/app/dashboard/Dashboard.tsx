@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import './DashboardHome.css';
+import './Dashboard.css';
 
-const DashboardHome = () => {
+const Dashboard = () => {
   const [count, setCount] = useState(0);
 
   return (
     <button onClick={() => setCount((count) => count + 1)}>
-        DashboardHome {count}
+        Dashboard {count}
     </button>
   )
 }
 
-export default DashboardHome;
+export default Dashboard;

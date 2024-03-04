@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import './NotFound.css';
+import './Homepage.css';
 
-const NotFound = () => {
+const Homepage = () => {
   const [count, setCount] = useState(0);
 
   return (
     <button onClick={() => setCount((count) => count + 1)}>
-        NotFound {count}
+        Homepage {count}
     </button>
   )
 }
 
-export default NotFound;
+export default Homepage;
