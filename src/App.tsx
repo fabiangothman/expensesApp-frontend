@@ -12,24 +12,30 @@ import Logout from "./pages/app/auth/logout/Logout";
 import AppNotFound from "./pages/app/notfound/SiteNotFound";
 // Styles
 import './App.css';
+import AuthProvider from "./providers/AuthProvider";
+import NavProvider from "./providers/NavProvider";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="" element={<SiteSchema />}>
-          <Route index element={<Homepage />} />
-          <Route path="about" element={<About />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="signin" element={<SignIn />} />
-          <Route path="*" element={<SiteNotFound />} />
-        </Route>
-        <Route path="app" element={<AppSchema />}>
-          <Route index element={<Dashboard />} />
-          <Route path="logout" element={<Logout />} />
-          <Route path="*" element={<AppNotFound />} />
-        </Route>
-      </Routes>
+      <AuthProvider>
+        <NavProvider>
+          <Routes>
+            <Route path="" element={<SiteSchema />}>
+              <Route index element={<Homepage />} />
+              <Route path="about" element={<About />} />
+              <Route path="signup" element={<SignUp />} />
+              <Route path="signin" element={<SignIn />} />
+              <Route path="*" element={<SiteNotFound />} />
+            </Route>
+            <Route path="app" element={<AppSchema />}>
+              <Route index element={<Dashboard />} />
+              <Route path="logout" element={<Logout />} />
+              <Route path="*" element={<AppNotFound />} />
+            </Route>
+          </Routes>
+        </NavProvider>
+      </AuthProvider>
     </BrowserRouter>
   )
 }
